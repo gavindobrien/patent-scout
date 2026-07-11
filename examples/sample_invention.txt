@@ -1,0 +1,11 @@
+A collapsible bicycle pedal assembly for commuter bikes. The pedal body
+folds flat against the crank arm using a spring-loaded ratchet hinge that
+locks automatically at full deployment (90 degrees from the crank arm) and
+requires a deliberate twist-and-release motion to fold, preventing
+accidental collapse under normal pedaling load. The hinge pin incorporates
+a captive detent ball that seats into a machined groove at the locked
+position, giving tactile and audible confirmation of full lock. The pedal
+body itself uses a two-piece aluminum shell with an internal steel
+reinforcement plate positioned only under the ball of the foot contact
+zone, reducing weight relative to a solid pedal while maintaining load
+rating under standard pedaling forces.

@@ -1,0 +1,6 @@
+venv/
+.env
+.claude/
+reports/*.md
+!reports/20260710-204904-sample-invention.md
+reports/.gitkeep
