@@ -70,10 +70,13 @@ from pubchem_tools import STRUCTURE_SEARCH, PUBCHEM_MCP_SERVERS, PUBCHEM_TOOL_NA
 load_dotenv()
 
 # Rich's legacy Windows console path encodes through sys.stdout, and cp1252
-# (the default there) can't represent the arrows/em-dashes/§ this project's
-# console output uses — reconfigure to UTF-8 before Console() is built.
-# hasattr-guarded because under pytest capture (and some other environments)
-# sys.stdout isn't a TextIOWrapper and has no reconfigure method.
+# (the default there) has no representation for U+2192 (→) — em-dash and §
+# are actually fine in cp1252, but Rich encodes each print's whole string in
+# one call, so a single arrow anywhere in the text raises UnicodeEncodeError
+# and takes the entire write down. Reconfigure to UTF-8 before Console() is
+# built. hasattr-guarded because under pytest capture (and some other
+# environments) sys.stdout isn't a TextIOWrapper and has no reconfigure
+# method.
 for _stream in (sys.stdout, sys.stderr):
     if hasattr(_stream, "reconfigure"):
         _stream.reconfigure(encoding="utf-8", errors="replace")
